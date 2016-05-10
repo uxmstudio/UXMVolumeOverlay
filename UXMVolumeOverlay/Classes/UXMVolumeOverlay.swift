@@ -12,7 +12,7 @@ import MediaPlayer
 public class UXMVolumeOverlay: NSObject {
 
     lazy var volumeView:MPVolumeView = {
-        var volumeView = MPVolumeView(frame: CGRectMake(-2000, -2000, 0, 0))
+        var volumeView = MPVolumeView(frame: CGRectMake(-2000.0, -2000.0, 0.0, 0.0))
         volumeView.alpha = 0.1
         volumeView.userInteractionEnabled = false
         return volumeView
@@ -20,7 +20,7 @@ public class UXMVolumeOverlay: NSObject {
     
     lazy var volumeWindow:UIWindow = {
         let screen = UIScreen.mainScreen().bounds
-        var volumeWindow = UIWindow(frame: CGRectMake(0,0, screen.width, 20))
+        var volumeWindow = UIWindow(frame: CGRectMake(0.0, -20.0, screen.width, 20.0))
         volumeWindow.backgroundColor = self.backgroundColor
         volumeWindow.windowLevel = UIWindowLevelStatusBar + 1
         return volumeWindow
@@ -59,15 +59,8 @@ public class UXMVolumeOverlay: NSObject {
         super.init()
         
         windows.first?.addSubview(volumeView)
-        
-        volumeWindow = UIWindow(frame: CGRectMake(0,0, screen.width, 20))
-        volumeWindow.backgroundColor = self.backgroundColor
-        volumeWindow.windowLevel = UIWindowLevelStatusBar + 1
-
         volumeWindow.addSubview(volumeProgress)
-        
-        
-        
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UXMVolumeOverlay.volumeChanged(_:)), name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
     }
     
@@ -93,7 +86,7 @@ public class UXMVolumeOverlay: NSObject {
         self.volumeWindow.layer.removeAllAnimations()
         UIWindow.animateWithDuration(0.25, animations: {
             
-            self.volumeWindow.frame = CGRectMake(0, 0, screen.width, 20)
+            self.volumeWindow.frame = CGRectMake(0.0, 0.0, screen.width, 20.0)
         })
     }
     
@@ -103,7 +96,7 @@ public class UXMVolumeOverlay: NSObject {
         self.volumeWindow.layer.removeAllAnimations()
         UIWindow.animateWithDuration(0.25, animations: {
             
-            self.volumeWindow.frame = CGRectMake(0, -20, screen.width, 20)
+            self.volumeWindow.frame = CGRectMake(0.0, -20.0, screen.width, 20.0)
         }) { (completed) in
             self.volumeWindow.hidden = true
         }

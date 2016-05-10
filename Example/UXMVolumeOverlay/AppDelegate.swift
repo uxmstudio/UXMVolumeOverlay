@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UXMVolumeOverlay
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
