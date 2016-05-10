@@ -1,6 +1,5 @@
 # UXMVolumeOverlay
 
-[![CI Status](http://img.shields.io/travis/Chris Anderson/UXMVolumeOverlay.svg?style=flat)](https://travis-ci.org/Chris Anderson/UXMVolumeOverlay)
 [![Version](https://img.shields.io/cocoapods/v/UXMVolumeOverlay.svg?style=flat)](http://cocoapods.org/pods/UXMVolumeOverlay)
 [![License](https://img.shields.io/cocoapods/l/UXMVolumeOverlay.svg?style=flat)](http://cocoapods.org/pods/UXMVolumeOverlay)
 [![Platform](https://img.shields.io/cocoapods/p/UXMVolumeOverlay.svg?style=flat)](http://cocoapods.org/pods/UXMVolumeOverlay)
@@ -20,10 +19,12 @@ it, simply add the following line to your Podfile:
 pod "UXMVolumeOverlay"
 ```
 
-## Author
+# Author
+Chris Anderson:
+- chris@uxmstudio.com
+- [Home Page](http://uxmstudio.com)
 
-Chris Anderson, hi@chrisanderson.io
 
-## License
+# License
 
 UXMVolumeOverlay is available under the MIT license. See the LICENSE file for more info.

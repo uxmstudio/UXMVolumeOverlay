@@ -1,0 +1,6 @@
+framework module UXMVolumeOverlay {
+  umbrella header "UXMVolumeOverlay-umbrella.h"
+
+  export *
+  module * { export * }
+}
