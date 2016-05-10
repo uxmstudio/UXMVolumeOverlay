@@ -53,7 +53,6 @@ public class UXMVolumeOverlay: NSObject {
     
     override init() {
         
-        let screen = UIScreen.mainScreen().bounds
         let windows = UIApplication.sharedApplication().windows
         
         super.init()
