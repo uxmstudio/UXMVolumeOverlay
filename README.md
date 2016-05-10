@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/UXMVolumeOverlay.svg?style=flat)](http://cocoapods.org/pods/UXMVolumeOverlay)
 [![Platform](https://img.shields.io/cocoapods/p/UXMVolumeOverlay.svg?style=flat)](http://cocoapods.org/pods/UXMVolumeOverlay)
 
-An expandable/collapsible UIView that holds an array of UIImageView. Something like accordion.  An interesting practice with auto layout and animation.
+A drop in replacement for the annoying iOS volume overlay; inspired by Instagram & Snapchat.
 
 ## Screenshots
 ![uxmvolumescreenshot](https://uxmstudio.com/public/images/github/volume_display.png)
