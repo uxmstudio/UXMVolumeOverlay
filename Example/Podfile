@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'UXMVolumeOverlay_Example', :exclusive => true do
+  pod 'UXMVolumeOverlay', :path => '../'
+end
+
+target 'UXMVolumeOverlay_Tests', :exclusive => true do
+  pod 'UXMVolumeOverlay', :path => '../'
+
+  pod 'Quick', '~> 0.8'
+  pod 'Nimble', '~> 3.0'
+end
