@@ -23,6 +23,7 @@ public class UXMVolumeOverlay: NSObject {
         var volumeWindow = UIWindow(frame: CGRectMake(0.0, -20.0, screen.width, 20.0))
         volumeWindow.backgroundColor = self.backgroundColor
         volumeWindow.windowLevel = UIWindowLevelStatusBar + 1
+        volumeWindow.rootViewController = UXMVolumeOverlayController()
         return volumeWindow
     }()
     
@@ -61,6 +62,7 @@ public class UXMVolumeOverlay: NSObject {
         volumeWindow.addSubview(volumeProgress)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UXMVolumeOverlay.volumeChanged(_:)), name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
     deinit {
@@ -90,7 +92,6 @@ public class UXMVolumeOverlay: NSObject {
     }
     
     public func hide() {
-        
         let screen = UIScreen.mainScreen().bounds
         self.volumeWindow.layer.removeAllAnimations()
         UIWindow.animateWithDuration(0.25, animations: {
@@ -117,5 +118,21 @@ public class UXMVolumeOverlay: NSObject {
                                                                    selector: #selector(UXMVolumeOverlay.hide),
                                                                    userInfo: nil,
                                                                    repeats: false)
+    }
+    
+    func rotated() {
+        let screen = UIScreen.mainScreen().bounds
+        self.volumeWindow.frame = CGRectMake(0.0, -20.0, screen.width, 20.0)
+    }
+}
+
+class UXMVolumeOverlayController:UIViewController {
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .All
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
     }
 }
