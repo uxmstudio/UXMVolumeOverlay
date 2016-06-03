@@ -62,7 +62,7 @@ public class UXMVolumeOverlay: NSObject {
         volumeWindow.addSubview(volumeProgress)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UXMVolumeOverlay.volumeChanged(_:)), name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UXMVolumeOverlay.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
     deinit {

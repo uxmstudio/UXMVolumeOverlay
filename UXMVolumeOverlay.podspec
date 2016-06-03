@@ -20,7 +20,4 @@ s.platform     = :ios, '8.0'
 s.requires_arc = true
 
 s.source_files = 'UXMVolumeOverlay/Classes/**/*'
-s.resource_bundles = {
-'UXMVolumeOverlay' => ['UXMVolumeOverlay/Assets/*.png']
-}
 end
