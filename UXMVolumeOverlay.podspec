@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "UXMVolumeOverlay"
-s.version          = "0.0.2"
+s.version          = "0.0.3"
 s.summary          = "A drop in replacement for the iOS volume overlay."
 s.description      = "A drop in replacement for the annoying volume overlay; inspired by Instagram & Snapchat."
 
