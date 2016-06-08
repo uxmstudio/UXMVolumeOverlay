@@ -44,7 +44,7 @@ public class UXMVolumeOverlay: NSObject {
     
     public var trackColor:UIColor = UIColor.blackColor() {
         didSet {
-            self.volumeProgress.progressTintColor = UIColor.blackColor()
+            self.volumeProgress.progressTintColor = trackColor
         }
     }
     
