@@ -123,6 +123,7 @@ public class UXMVolumeOverlay: NSObject {
     func rotated() {
         let screen = UIScreen.mainScreen().bounds
         self.volumeWindow.frame = CGRectMake(0.0, -20.0, screen.width, 20.0)
+        self.volumeProgress.frame = CGRectMake(10.0, 10.0, screen.width - 20.0, 20.0)
     }
 }
 
