@@ -9,7 +9,12 @@
 import UIKit
 import MediaPlayer
 
-public class UXMVolumeOverlay: NSObject {
+public protocol UXMVolumeProgress: class {
+    var view: UIView { get }
+    func progressChanged(progress: Float)
+}
+
+public class UXMVolumeOverlay:NSObject {
 
     lazy var volumeView:MPVolumeView = {
         var volumeView = MPVolumeView(frame: CGRectMake(-2000.0, -2000.0, 0.0, 0.0))
@@ -27,14 +32,8 @@ public class UXMVolumeOverlay: NSObject {
         return volumeWindow
     }()
     
-    lazy var volumeProgress:UIProgressView = {
-        let screen = UIScreen.mainScreen().bounds
-        var volumeProgress = UIProgressView(frame: CGRectMake(10.0, 10.0, screen.width - 20.0, 20.0))
-        volumeProgress.progress = 0.0
-        volumeProgress.trackTintColor = UIColor.clearColor()
-        volumeProgress.progressTintColor = self.trackColor
-        return volumeProgress
-    }()
+    /// Indicator object for displaying current volume to user
+    public lazy var progressIndicator:UXMVolumeProgress = UXMVolumeProgressView()
     
     public var backgroundColor:UIColor = UIColor.whiteColor() {
         didSet {
@@ -42,12 +41,7 @@ public class UXMVolumeOverlay: NSObject {
         }
     }
     
-    public var trackColor:UIColor = UIColor.blackColor() {
-        didSet {
-            self.volumeProgress.progressTintColor = trackColor
-        }
-    }
-    
+    /// Shared handler for the overlay
     public static var sharedOverlay = UXMVolumeOverlay()
     
     var displayTimer:NSTimer?
@@ -58,8 +52,7 @@ public class UXMVolumeOverlay: NSObject {
         
         super.init()
         
-        windows.first?.addSubview(volumeView)
-        volumeWindow.addSubview(volumeProgress)
+        windows.first?.addSubview(self.volumeView)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UXMVolumeOverlay.volumeChanged(_:)), name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UXMVolumeOverlay.rotated), name: UIDeviceOrientationDidChangeNotification, object: nil)
@@ -76,8 +69,17 @@ public class UXMVolumeOverlay: NSObject {
         }
     }
     
-    public func load() { }
+    /// Loads the volume indicator override onto the view controller
+    ///
+    /// - Parameter progressIndicator: An indicator that conforms to the UXMVolumeProgress 
+    ///     protocol
+    public func load(progressIndicator: UXMVolumeProgress = UXMVolumeProgressView()) {
+        self.progressIndicator.view.removeFromSuperview()
+        self.progressIndicator = progressIndicator
+        self.volumeWindow.addSubview(progressIndicator.view)
+    }
     
+    /// Show the volume indicator
     public func show() {
         self.restartTimer()
         
@@ -91,6 +93,7 @@ public class UXMVolumeOverlay: NSObject {
         })
     }
     
+    /// Hide the volume indicator
     public func hide() {
         let screen = UIScreen.mainScreen().bounds
         self.volumeWindow.layer.removeAllAnimations()
@@ -103,8 +106,8 @@ public class UXMVolumeOverlay: NSObject {
     }
     
     func setVolume(volume: Float) {
-        volumeProgress.progress = volume
-        show()
+        self.progressIndicator.progressChanged(volume)
+        self.show()
     }
     
     func restartTimer() {
@@ -123,7 +126,7 @@ public class UXMVolumeOverlay: NSObject {
     func rotated() {
         let screen = UIScreen.mainScreen().bounds
         self.volumeWindow.frame = CGRectMake(0.0, -20.0, screen.width, 20.0)
-        self.volumeProgress.frame = CGRectMake(10.0, 10.0, screen.width - 20.0, 20.0)
+        self.progressIndicator.view.frame = CGRectMake(10.0, 10.0, screen.width - 20.0, 20.0)
     }
 }
 

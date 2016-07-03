@@ -25,18 +25,32 @@ pod "UXMVolumeOverlay"
 
 ## Usage
 Using the volume overlay is just drag and drop. Simply call:
-```
+```swift
 UXMVolumeOverlay.sharedOverlay.load()
 ```
 
+You can create your own custom indicator by extending the protocol UXMVolumeProgress. This allows you to have any view display the progress indicator. The standard indicator is a UIProgressView like Instagram uses, but anything is possible.
+
+```swift
+\\\ UXMVolumeProgress
+var view: UIView { get }
+func progressChanged(progress: Float)
+```
+
+Your custom UXMVolumeProgress object is then passed to the handler on load.
+```swift
+var indicator = CustomIndicator()
+UXMVolumeOverlay.sharedOverlay.load(indicator)
+```
+
 ### Interface
-```Swift
+```swift
 func show()
 func hide()
 
 var backgroundColor:UIColor
-var trackColor:UIColor
 ```
+
 ### Demo Project
 To run the example project, clone the repo with `git clone https://github.com/uxmstudio/UXMVolumeOverlay.git`, and run `pod install` from the Example directory first.
 

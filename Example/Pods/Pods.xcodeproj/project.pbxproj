@@ -43,6 +43,7 @@
 		5DE1CE615507C8BBFAAE0CE4AF0154B9 /* Pods-UXMVolumeOverlay_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0901803E2003098286A1157CFC490AEE /* Pods-UXMVolumeOverlay_Example-dummy.m */; };
 		5EF5C00C6AECE1FCFFF118577817F5CE /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3661DD977D936FA0FEA7FDE08D852 /* Equal.swift */; };
 		60A1298F3B6489762EEB9C4D1B3B0B05 /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = B973D705E425F6A8CF2906380774F7EC /* World.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		61AC75DB1D2996DC0065DA65 /* UXMVolumeProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC75D91D2995070065DA65 /* UXMVolumeProgressView.swift */; };
 		61D3B3811CE220C000E7C3A6 /* UXMVolumeOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D3B37F1CE2203200E7C3A6 /* UXMVolumeOverlay.swift */; };
 		63BBD83995BA60FA7D2E6AD4138C0D71 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354B5315AD30C24D1172D4F1524B068D /* Functional.swift */; };
 		64539BE196D1741570018FFF86F14133 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971FBD63640E42D5B13E199D80A38E44 /* MatcherFunc.swift */; };
@@ -182,6 +183,7 @@
 		52BA36A6401BC115998ABD064555B4DE /* Pods-UXMVolumeOverlay_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UXMVolumeOverlay_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5C8C873CB5F43A0FA130C9B9FF74B6B0 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		5CE93FA4667205AEE386C8648ABDC57E /* BeCloseTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeCloseTo.swift; path = Sources/Nimble/Matchers/BeCloseTo.swift; sourceTree = "<group>"; };
+		61AC75D91D2995070065DA65 /* UXMVolumeProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UXMVolumeProgressView.swift; sourceTree = "<group>"; };
 		61D3B37F1CE2203200E7C3A6 /* UXMVolumeOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UXMVolumeOverlay.swift; sourceTree = "<group>"; };
 		627E4E84747227302312F1E22D114789 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		62ADCB0AE00199FEACED77BDE119552F /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				61D3B37F1CE2203200E7C3A6 /* UXMVolumeOverlay.swift */,
+				61AC75D91D2995070065DA65 /* UXMVolumeProgressView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61AC75DB1D2996DC0065DA65 /* UXMVolumeProgressView.swift in Sources */,
 				61D3B3811CE220C000E7C3A6 /* UXMVolumeOverlay.swift in Sources */,
 				4FE358FA65DDBC8F55729B0749FBD462 /* UXMVolumeOverlay-dummy.m in Sources */,
 			);
