@@ -12,7 +12,7 @@ A drop in replacement for the annoying iOS volume overlay; inspired by Instagram
 ## Requirements
 - iOS 8 or above
 - Xcode 7 or above
-- Swift 2.1
+- Swift 3.0
 
 ## Installation
 
