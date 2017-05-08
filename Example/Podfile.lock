@@ -1,5 +1,5 @@
 PODS:
-  - UXMVolumeOverlay (0.1.0)
+  - UXMVolumeOverlay (0.2.0)
 
 DEPENDENCIES:
   - UXMVolumeOverlay (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  UXMVolumeOverlay: 1d8dd95b5d2f41c0207b6275427d7cbbab5f53e1
+  UXMVolumeOverlay: c565592a3bdb92c37594dd31ac08b6dc7c3be1e8
 
-PODFILE CHECKSUM: b2e0825e3da5e1bf24db41df46fd3f78eef9a9f0
+PODFILE CHECKSUM: a3abd7ed9e966202dbf6dac0f282822266e066ad
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
