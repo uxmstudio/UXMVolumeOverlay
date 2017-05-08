@@ -19,5 +19,5 @@ s.source           = { :git => "https://github.com/uxmstudio/UXMVolumeOverlay.gi
 s.platform     = :ios, '8.0'
 s.requires_arc = true
 
-s.source_files = 'Pod/Classes/**/*'
+s.ios.source_files = 'Pod/Classes/**/*'
 end
