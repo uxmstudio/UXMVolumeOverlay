@@ -8,19 +8,19 @@
 
 import Foundation
 
-public class UXMVolumeProgressView: UIView {
+open class UXMVolumeProgressView: UIView {
     
-    public var trackColor:UIColor = UIColor.blackColor() {
+    open var trackColor:UIColor = UIColor.black {
         didSet {
             self.volumeProgress.progressTintColor = trackColor
         }
     }
     
     lazy var volumeProgress:UIProgressView = {
-        let screen = UIScreen.mainScreen().bounds
-        var volumeProgress = UIProgressView(frame: CGRectMake(10.0, 10.0, screen.width - 20.0, 20.0))
+        let screen = UIScreen.main.bounds
+        var volumeProgress = UIProgressView(frame: CGRect(x: 10.0, y: 10.0, width: screen.width - 20.0, height: 20.0))
         volumeProgress.progress = 0.0
-        volumeProgress.trackTintColor = UIColor.clearColor()
+        volumeProgress.trackTintColor = UIColor.clear
         volumeProgress.progressTintColor = self.trackColor
         return volumeProgress
     }()
@@ -44,7 +44,7 @@ extension UXMVolumeProgressView: UXMVolumeProgress {
     
     public var view: UIView { return self }
     
-    public func progressChanged(progress: Float) {
+    public func changed(progress: Float) {
         
         self.volumeProgress.progress = progress
     }

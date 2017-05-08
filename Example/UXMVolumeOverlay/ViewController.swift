@@ -19,17 +19,12 @@ class ViewController: UIViewController {
         
         try! AVAudioSession.sharedInstance().setActive(true)
         
-        let url = NSURL(string: "http://91.132.6.21:8001")!
-        audioPlayer = AVPlayer(URL: url)
+        /// This url is just for example purposes. Any audio will do
+        let url = URL(string: "http://91.132.6.21:8001")!
+        audioPlayer = AVPlayer(url: url)
         audioPlayer.play()
         
-        UXMVolumeOverlay.sharedOverlay.load()
+        UXMVolumeOverlay.shared.load()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

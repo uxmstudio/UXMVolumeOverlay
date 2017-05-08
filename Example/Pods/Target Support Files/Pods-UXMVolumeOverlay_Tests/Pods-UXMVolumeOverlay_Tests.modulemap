@@ -1,6 +1,0 @@
-framework module Pods_UXMVolumeOverlay_Tests {
-  umbrella header "Pods-UXMVolumeOverlay_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
